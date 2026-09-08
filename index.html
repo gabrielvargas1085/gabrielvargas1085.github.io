@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabriel Vargas | Data & AI</title>
+<meta name="description" content="Portfolio de Gabriel Vargas: de analista de datos a AI engineer. Proyectos con Roller Pro, Cormac, CONAE, Enferexpress y desarrollos propios en IA y blockchain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero__inner">
+    <p class="hero__firma">Gabriel Vargas</p>
+    <h1 class="hero__titulo">De leer datos a construir<br>los sistemas que los generan.</h1>
+    <nav class="hero__nav">
+      <a href="#recorrido">Ver recorrido</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+  <svg class="hero__grafico" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true">
+    <polyline class="hero__linea" points="0,150 80,140 140,155 200,110 260,120 320,70 380,90 440,45 500,55 600,15" />
+    <polyline class="hero__linea hero__linea--trazo" points="0,150 80,140 140,155 200,110 260,120 320,70 380,90 440,45 500,55 600,15" />
+  </svg>
+</header>
+
+<main>
+  <section id="recorrido" class="recorrido">
+    <div class="recorrido__intro">
+      <h2>Recorrido</h2>
+      <p>Seis proyectos, del análisis de datos a la inteligencia artificial aplicada. Tocá cada uno para ver el detalle.</p>
+    </div>
+    <ol class="linea-tiempo" id="lista-proyectos"><!-- se llena con script.js --></ol>
+  </section>
+
+  <section id="servicios" class="servicios">
+    <div class="servicios__intro">
+      <h2>Servicios en AiFeelingX</h2>
+      <p>A través de AiFeelingX ofrezco estos servicios en producción. El detalle de cada uno está en la web de la marca.</p>
+    </div>
+
+    <ul class="servicios__lista">
+      <li>Agentes de IA personalizados</li>
+      <li>Digitalización de procesos de negocio</li>
+    </ul>
+
+    <a class="boton" href="https://aifeelingx.com/" target="_blank" rel="noopener noreferrer">Ver servicios en AiFeelingX</a>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h2>¿Buscás sumar este perfil a tu equipo?</h2>
+    <p>Analista de datos, científico de datos y desarrollador de agentes de IA. Si mi perfil encaja con una posición en tu equipo, escribime.</p>
+    <a class="boton boton--principal" href="mailto:hola@gabrielvargas.site">Escribirme un email</a>
+  </section>
+</main>
+
+<footer class="pie">
+  <p>Gabriel Vargas — AiFeelingX</p>
+</footer>
+
+<!-- Modal de formulario de acceso a demo (Agente de Negocios / Títulos Digitales) -->
+<div class="modal" id="modal-acceso" hidden>
+  <div class="modal__caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <button class="modal__cerrar" id="modal-cerrar" aria-label="Cerrar">×</button>
+    <h3 id="modal-titulo">Solicitar acceso</h3>
+    <p id="modal-nota"></p>
+    <form id="form-acceso">
+      <input type="hidden" name="proyecto" id="form-proyecto">
+      <!-- honeypot: campo trampa para bots, oculto visualmente pero presente en el DOM -->
+      <div class="campo-trampa" aria-hidden="true">
+        <label for="sitio-web">No completar</label>
+        <input type="text" id="sitio-web" name="sitio-web" tabindex="-1" autocomplete="off">
+      </div>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <label for="institucion">Institución / empresa</label>
+      <input type="text" id="institucion" name="institucion" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit" class="boton boton--principal">Solicitar acceso</button>
+      <p class="form-estado" id="form-estado" role="status"></p>
+    </form>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
