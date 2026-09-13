@@ -240,6 +240,13 @@ a { color: inherit; }
   margin-top: 1.1rem;
 }
 
+.proyecto__nota-enlace {
+  font-size: 0.82rem;
+  color: var(--azul-acero);
+  margin-top: 0.6rem;
+  max-width: var(--ancho-lectura);
+}
+
 /* ===== Botones ===== */
 .boton {
   display: inline-block;
@@ -294,6 +301,12 @@ a { color: inherit; }
 }
 .contacto h2 { font-size: 1.6rem; margin-bottom: 0.6rem; }
 .contacto p { color: var(--azul-acero); margin-bottom: 1.4rem; }
+
+.boton--whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
 /* ===== Pie ===== */
 .pie {
