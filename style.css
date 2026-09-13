@@ -241,10 +241,23 @@ a { color: inherit; }
 }
 
 .proyecto__nota-enlace {
-  font-size: 0.82rem;
-  color: var(--azul-acero);
-  margin-top: 0.6rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--azul-electrico-oscuro);
+  background: var(--papel-alt);
+  border: 1px solid var(--azul-electrico);
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  margin-top: 0.8rem;
   max-width: var(--ancho-lectura);
+}
+.proyecto__nota-enlace::before {
+  content: "⚠";
+  flex-shrink: 0;
+  line-height: 1.3;
 }
 
 /* ===== Botones ===== */
