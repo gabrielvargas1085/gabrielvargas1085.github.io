@@ -1,3 +1,4 @@
+
 const PROYECTOS = [
   {
     id: "roller-pro",
@@ -50,7 +51,8 @@ const PROYECTOS = [
     tecnologias: ["Python 3.12", "Streamlit", "Claude (API de Anthropic)", "PyMuPDF", "fpdf2", "SHA-256"],
     enlaces: [
       { label: "Ver demo", url: "https://demoinnovatonconaemapasemergencia-fmxar2yobtzcjwdknnxqyv.streamlit.app/" }
-    ]
+    ],
+    notaEnlace: "Al ingresar, si la app está dormida, apretá el botón azul que dice \"Yes, get this app back up!\" — Streamlit pone a dormir las apps sin uso reciente."
   },
   {
     id: "enferexpress",
