@@ -1,3 +1,5 @@
+// script.js
+// Renderiza PROYECTOS (definidos en data.js) como un timeline con acordeón.
 
 const ETIQUETAS = {
   cliente: "Cliente",
