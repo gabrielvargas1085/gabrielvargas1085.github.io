@@ -1,5 +1,3 @@
-// script.js
-// Renderiza PROYECTOS (definidos en data.js) como un timeline con acordeón.
 
 const ETIQUETAS = {
   cliente: "Cliente",
@@ -42,11 +40,23 @@ function crearMedia(proyecto) {
     const video = document.createElement("video");
     video.className = "proyecto__media";
     video.controls = true;
-    video.preload = "none";
+    video.preload = "metadata";
     const source = document.createElement("source");
     source.src = proyecto.video;
     source.type = "video/mp4";
     video.appendChild(source);
+
+    video.addEventListener(
+      "error",
+      () => {
+        const div = document.createElement("div");
+        div.className = "proyecto__media proyecto__media--placeholder";
+        div.textContent = `Agregar ${proyecto.video} para que se reproduzca acá`;
+        video.replaceWith(div);
+      },
+      true
+    );
+
     return video;
   }
   const img = document.createElement("img");
@@ -143,6 +153,13 @@ function crearProyecto(proyecto, index) {
       enlacesDiv.appendChild(a);
     });
     contenido.appendChild(enlacesDiv);
+
+    if (proyecto.notaEnlace) {
+      const nota = document.createElement("p");
+      nota.className = "proyecto__nota-enlace";
+      nota.textContent = proyecto.notaEnlace;
+      contenido.appendChild(nota);
+    }
   }
 
   if (proyecto.formulario) {
@@ -182,8 +199,8 @@ const formProyecto = document.getElementById("form-proyecto");
 const formAcceso = document.getElementById("form-acceso");
 const formEstado = document.getElementById("form-estado");
 
-// 
-const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwfIYk39MdrxqxwFw0fwPhvCyUreMYuT0iZxXqmaOvES2OWddxQAYL_my3IvHX_6q9Q7A/exec";
+// Reemplazá esta URL por la de tu Web App de Google Apps Script cuando la tengas lista.
+const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbzfBAY1rS5KM71Lch9yzJ1amntGuswqJC1AcAi5IQVOC_2pC9PCDRBHCgpgtcv234BoWg/exec";
 
 function abrirModal(config) {
   modalTitulo.textContent = config.titulo;
