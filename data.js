@@ -1,4 +1,3 @@
-
 const PROYECTOS = [
   {
     id: "roller-pro",
@@ -68,7 +67,8 @@ const PROYECTOS = [
     tecnologias: ["LangChain", "LangGraph", "Python", "PostgreSQL", "API oficial de WhatsApp (Meta)"],
     enlaces: [
       { label: "Ver app en Google Play", url: "https://play.google.com/store/apps/details?id=com.aifeelingx.enferexpressapp&hl=es_AR" },
-      { label: "Ver servicio de turnos", url: "https://aifeelingx.com/servicios_turnos/" }
+      { label: "Ver servicio de turnos", url: "https://aifeelingx.com/servicios_turnos/" },
+      { label: "Ver tablero de clientes", url: "https://datastudio.google.com/reporting/076ef6aa-e76e-4efb-9a38-45e9f7fb666d/page/dxNRE" }
     ]
   },
   {
