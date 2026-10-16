@@ -1,6 +1,3 @@
-// script.js
-// Renderiza PROYECTOS (definidos en data.js) como un timeline con acordeón.
-
 const ETIQUETAS = {
   cliente: "Cliente",
   propio: "Proyecto propio",
@@ -74,6 +71,72 @@ function crearMedia(proyecto) {
   return img;
 }
 
+function imagenConAviso(src, alt, claseImg) {
+  const img = document.createElement("img");
+  img.className = claseImg;
+  img.alt = alt;
+  img.src = src;
+  img.loading = "lazy";
+  img.onerror = () => {
+    const div = document.createElement("div");
+    div.className = `${claseImg} proyecto__media--placeholder`;
+    div.textContent = `Agregar ${src} en la raíz del sitio`;
+    img.replaceWith(div);
+  };
+  return img;
+}
+
+// Imagen vertical y recuadro "Probalo ahora" (con QR), para proyectos que los definan.
+function crearExtras(proyecto) {
+  if (!proyecto.imagenVertical && !proyecto.prueba) return null;
+
+  const extras = document.createElement("div");
+  extras.className = "proyecto__extras";
+
+  if (proyecto.prueba) {
+    const caja = document.createElement("div");
+    caja.className = "proyecto__prueba";
+
+    const titulo = document.createElement("h4");
+    titulo.textContent = proyecto.prueba.titulo;
+    caja.appendChild(titulo);
+
+    const texto = document.createElement("p");
+    texto.textContent = proyecto.prueba.texto;
+    caja.appendChild(texto);
+
+    if (proyecto.prueba.qr) {
+      caja.appendChild(
+        imagenConAviso(proyecto.prueba.qr, `Código QR para abrir el bot de ${proyecto.empresa}`, "proyecto__qr")
+      );
+    }
+
+    if (proyecto.prueba.detalle) {
+      const detalle = document.createElement("p");
+      detalle.className = "proyecto__prueba-detalle";
+      detalle.textContent = proyecto.prueba.detalle;
+      caja.appendChild(detalle);
+    }
+    extras.appendChild(caja);
+  }
+
+  if (proyecto.imagenVertical) {
+    const figura = document.createElement("figure");
+    figura.className = "proyecto__vertical";
+    figura.appendChild(
+      imagenConAviso(proyecto.imagenVertical.src, proyecto.imagenVertical.alt, "proyecto__vertical-img")
+    );
+    if (proyecto.imagenVertical.leyenda) {
+      const leyenda = document.createElement("figcaption");
+      leyenda.textContent = proyecto.imagenVertical.leyenda;
+      figura.appendChild(leyenda);
+    }
+    extras.appendChild(figura);
+  }
+
+  return extras;
+}
+
 function crearProyecto(proyecto, index) {
   const li = document.createElement("li");
   li.className = "proyecto";
@@ -123,7 +186,7 @@ function crearProyecto(proyecto, index) {
   contenido.className = "proyecto__contenido";
   contenido.appendChild(crearMedia(proyecto));
 
-  contenido.appendChild(crearBloque("Problema", proyecto.problema));
+  if (proyecto.problema) contenido.appendChild(crearBloque("Problema", proyecto.problema));
   contenido.appendChild(crearBloque("Solución", proyecto.solucion));
 
   if (proyecto.tecnologias?.length) {
@@ -141,6 +204,9 @@ function crearProyecto(proyecto, index) {
     bloqueTec.appendChild(chips);
     contenido.appendChild(bloqueTec);
   }
+
+  const extras = crearExtras(proyecto);
+  if (extras) contenido.appendChild(extras);
 
   if (proyecto.enlaces?.length) {
     const enlacesDiv = document.createElement("div");
