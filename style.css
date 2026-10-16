@@ -233,6 +233,71 @@ a { color: inherit; }
   border-radius: 4px;
 }
 
+/* Imagen vertical + recuadro "Probalo ahora" con QR */
+.proyecto__extras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  align-items: flex-start;
+  margin-top: 1.2rem;
+}
+.proyecto__prueba {
+  flex: 1 1 260px;
+  max-width: 380px;
+  background: var(--papel-alt);
+  border: 1px solid var(--azul-electrico);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+.proyecto__prueba h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--azul-electrico-oscuro);
+  margin: 0 0 0.4rem;
+}
+.proyecto__prueba p { margin: 0 0 0.8rem; font-size: 0.92rem; }
+.proyecto__prueba .proyecto__prueba-detalle {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  color: var(--azul-acero);
+}
+.proyecto__qr {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px;
+}
+.proyecto__qr.proyecto__media--placeholder {
+  color: var(--azul-acero);
+  aspect-ratio: 1 / 1;
+  font-size: 0.72rem;
+}
+.proyecto__vertical {
+  flex: 0 1 260px;
+  margin: 0;
+}
+.proyecto__vertical-img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+}
+.proyecto__vertical-img.proyecto__media--placeholder {
+  aspect-ratio: 9 / 16;
+  background: linear-gradient(135deg, var(--azul-noche), var(--azul-electrico-oscuro));
+}
+.proyecto__vertical figcaption {
+  font-size: 0.8rem;
+  color: var(--azul-acero);
+  margin-top: 0.4rem;
+}
+
 .proyecto__enlaces {
   display: flex;
   flex-wrap: wrap;
