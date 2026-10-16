@@ -1,5 +1,31 @@
 const PROYECTOS = [
   {
+    id: "ai-empleo",
+    empresa: "AI_empleo",
+    tipo: "producto",
+    logo: "aiempleo-logo.png",
+    video: "assets/video/panel-aiempleo.mp4",
+    resumen: "Conexión e inteligencia laboral verificable: oficios, agente de IA y registro en blockchain.",
+    solucion:
+      "Una plataforma que funciona desde un chat. El trabajador se registra gratis, declara sus oficios y competencias, y verifica su identidad. Quien necesita un servicio lo pide con sus palabras o por audio, y un agente de IA propone a los trabajadores más cercanos, con la competencia justa y bien calificados. Cada trabajo y su calificación quedan registrados en blockchain, sin datos personales, para que el trabajador construya un historial laboral verificable que puede mostrar en cualquier lugar. Municipios, empresas y consultoras de RRHH acceden a un panel con el análisis del mercado laboral local: oferta y demanda por oficio, brechas de competencias, capacitaciones recomendadas y huella de carbono de los traslados.",
+    tecnologias: ["Agente de IA", "Blockchain", "Telegram", "WhatsApp"],
+    imagenVertical: {
+      src: "panel-analisis.jpg",
+      alt: "Panel de análisis del mercado laboral local de AI_empleo",
+      leyenda: "Panel de análisis del mercado laboral local"
+    },
+    prueba: {
+      titulo: "Probalo ahora",
+      texto: "Escaneá el QR, abrí el bot en Telegram y escribí /demo. Con un solo celular podés probar los dos lados: pedir un servicio como cliente y recibir la oferta como trabajador.",
+      detalle: "En Telegram buscá @aiempleo_demo_bot o escaneá el QR.",
+      qr: "aiempleo-qr.png"
+    },
+    enlaces: [
+      { label: "Abrir el bot en Telegram", url: "https://t.me/aiempleo_demo_bot" },
+      { label: "Pedir acceso al panel de administración", url: "https://wa.me/5493512130298?text=Hola%2C%20quiero%20pedir%20acceso%20al%20panel%20de%20administraci%C3%B3n%20de%20AI_empleo" }
+    ]
+  },
+  {
     id: "roller-pro",
     empresa: "Roller Pro",
     tipo: "cliente",
